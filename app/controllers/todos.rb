@@ -9,15 +9,29 @@ end
 
 get '/todos/new' do
   @todo = Todo.new
-  if request.xhr?
+  if request.xhr? ## AJAX request
     erb :new, layout: false
   else
+    # sending ALL THE DATA HTML CSS AND JS for NEW FORM - HEADERS
     erb :new
   end
 end
 
-post "/todos" do
-  
+post '/todos' do
+  p params
+  @todo = Todo.new(params[:todos])
+  if @todo.save
+    if request.xhr?
+      p @todo
+      content_type :json
+      data = {new_todo: @todo}.to_json
+      # erb :new, layout: false
+    else
+      redirect '/todos'
+    end
+  else
+    redirect '/todos/new'
+  end
 end
 
 get '/todos/:id' do

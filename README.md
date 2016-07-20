@@ -2,6 +2,7 @@
 
 - What is it?
 - How does it work?
+- What is required to use $ ?
 
 ### What We Will be Doing
 
@@ -15,6 +16,6 @@
 
 ### Recap
 
-- What does AJAX allow us to do?
-- How does data get exchanged?
-- What's the code look like?
+- What does AJAX allow us to do? What is AJAX a function of?
+- How does data get exchanged from client side to server?
+- What's the code look like with an AJAX?
