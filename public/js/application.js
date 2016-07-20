@@ -1,7 +1,26 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  console.log('READY');
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  getNewTodoFormListener();
 });
+
+function getNewTodoFormListener(){
+  $('#new-todo-form').on('click', function(event){
+    event.preventDefault();
+    console.log('clicked it')
+    displayForm();
+  })
+}
+
+function displayForm(){
+  $.ajax({
+    url: '/todos/new',
+    method: 'GET'
+  })
+  .done(function(response){
+    console.log('respon', response)
+  })
+  .fail(function(response){
+    console.log('failling')
+  })
+}
