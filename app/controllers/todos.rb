@@ -16,6 +16,10 @@ get '/todos/new' do
   end
 end
 
+post "/todos" do
+  
+end
+
 get '/todos/:id' do
   @todo = Todo.find(params[:id])
   erb :show
