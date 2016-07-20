@@ -7,7 +7,7 @@ $(document).ready(function() {
 function getNewTodoFormListener(){
   $('#new-todo-form').on('click', function(event){
     event.preventDefault();
-    console.log('clicked it')
+    console.log('clicked it');
     displayForm();
   })
 }
@@ -20,7 +20,7 @@ function displayForm(){
   .done(function(response){
     console.log('respon', response)
     $('.todos').hide();
-    $('.container').append(response)
+    $('#new-todo').append(response)
   })
   .fail(function(response){
     console.log('failling')

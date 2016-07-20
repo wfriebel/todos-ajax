@@ -1,7 +1,10 @@
 <div class="container">
   <h1>See All TODOS tasks</h1>
 
-  <a href="/todos/new" id='new-todo-form'>Add a Task!</a>
+  <div id='new-todo'>
+    <a href="/todos/new" id='new-todo-form'>Add a Task!</a>
+  </div>
+
   <div class='todos'>
   <% @todos.each do |todo| %>
     <p id="task-<%= todo.id %>"> TASK: <a href="/todos/<%= todo.id %>"><%= todo.task %></a> | HELPFUL HINT: <%= todo.description %></p>
