@@ -19,6 +19,8 @@ function displayForm(){
   })
   .done(function(response){
     console.log('respon', response)
+    $('.todos').hide();
+    $('.container').append(response)
   })
   .fail(function(response){
     console.log('failling')
